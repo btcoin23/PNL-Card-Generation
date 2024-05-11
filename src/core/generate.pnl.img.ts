@@ -1,16 +1,11 @@
-import puppeteer from 'puppeteer';
 import nodeHtmlToImage from 'node-html-to-image';
 import QRCode from "qrcode";
 import { Request, Response } from 'express'
 import fs from 'fs';
 
 export const generatePNLImage = async (req: Request, res: Response) => {
-  const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
-
   try {
     const { chatId, pairTitle, boughtAmount, pnlValue, worth, profitPercent, burnAmount, isBuy, referralLink } = req.body;
-
-    await browser.newPage();
 
     const timestamp = (Date.now() / 1000).toFixed(0);
     const imageId = `${chatId}-${timestamp}.png`
@@ -229,7 +224,8 @@ export const generatePNLImage = async (req: Request, res: Response) => {
         imageSource: dataURI,
         fireImageSource: fireDataURI,
         scanmeImageSource: scanmeDataURI
-      }
+      },
+      puppeteerArgs: { args: ['--no-sandbox'] }
     });
     // .then(() => console.log('The image was created successfully!'))
     res.status(200).send({
@@ -238,7 +234,5 @@ export const generatePNLImage = async (req: Request, res: Response) => {
   } catch (e) {
     console.log(e);
     return res.status(500).send({ msg: "Internal server error" });
-  } finally {
-    await browser.close();
   }
 }
