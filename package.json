@@ -20,7 +20,6 @@
     "express": "^4.18.2",
     "helmet": "^7.1.0",
     "node-html-to-image": "^4.0.0",
-    "puppeteer": "^22.8.0",
     "qrcode": "^1.5.3"
   },
   "devDependencies": {
