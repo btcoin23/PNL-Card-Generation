@@ -229,7 +229,7 @@ export const generatePNLImage = async (req: Request, res: Response) => {
     });
     // .then(() => console.log('The image was created successfully!'))
     res.status(200).send({
-      pplUrl: `https://api-trade.growsol.io/assets/pnl/${imageId}`
+      pplUrl: `${req.protocol}://${req.get('host')}/assets/pnl/${imageId}`
     })
   } catch (e) {
     console.log(e);
