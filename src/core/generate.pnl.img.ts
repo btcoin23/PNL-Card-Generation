@@ -112,7 +112,7 @@ export const generatePNLImage = async (req: Request, res: Response) => {
           color: #B647EE;
         }
         .percentage {
-          color: #7ED957;
+          color: ${profitPercent < 0 ? '#F1473A' : '#7ED957'};
           font-size: 150px;
           font-weight: 600;
           width: 100%;
