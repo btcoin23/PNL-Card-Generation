@@ -10,12 +10,16 @@
 
 
 ## PNL Card
-https://github.com/btcoin23/PNL-Card-Generation/blob/main/src/assets/pnl/chatid-1715443457.png
-https://github.com/btcoin23/PNL-Card-Generation/blob/main/src/assets/a.jpg
+![image](https://github.com/btcoin23/PNL-Card-Generation/src/assets/pnl/chatid-1715443457)
+
+
+![image](https://github.com/btcoin23/PNL-Card-Generation/src/assets/a.jpg)
+
 
 ## Postman
 
-https://github.com/btcoin23/PNL-Card-Generation/blob/main/src/assets/b.png
+
+![image](https://github.com/btcoin23/PNL-Card-Generation/src/assets/b.png)
 
 
 ```sh
